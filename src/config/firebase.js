@@ -1,4 +1,4 @@
-import { firebase } from 'firebase/app'
+import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
@@ -12,6 +12,7 @@ const firebaseConfig = {
   measurementId: 'G-54S2Q1G2Z8'
 }
 
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 
 export { firebase }
