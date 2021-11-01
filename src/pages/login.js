@@ -42,7 +42,7 @@ export function Inicio () {
 
   return (
     <Container className="container">
-        <Row id="tela" className="h-100">
+        <Row className="h-100">
         <Col md={5} className="colunaMensagem">
           <h1 className="titulo">Gerenciador de Vendas</h1>
           <h5 className="subtitulo">Não importa qual seu ramo de atuação, gerencie suas vendas com um sistema descomplicado e intuitivo.</h5>
@@ -87,7 +87,7 @@ export function Inicio () {
                         { sucesso
                           ? (console.log(sucesso))
                           : (<Alert variant={'danger'} >
-                              Erro no login! Por favor verifique as informações
+                              Erro no login! Por favor verifique as informações.
                             </Alert>
                             ) }
                 </Card.Body>
