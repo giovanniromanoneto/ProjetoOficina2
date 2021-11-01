@@ -1,0 +1,18 @@
+.botao{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.container{
+    margin-top: 25px;
+    
+}
+
+.formulario{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
