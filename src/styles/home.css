@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #3c4f77;
+  }
+
+.secaoLista {
+    padding: 3vh;
+    background-color: rgb(238, 238, 238);
+    margin-top: 5vh;
+}
+
+.headerLista {
+    margin-bottom: 3vh;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+Table{
+    margin-top: 2vh;
+    border: none;
+}
+
+.tituloLista {
+    margin-top: 3vh;
+    font-weight: 500;
+    color: #3c4f77;
+}
+
+th, td {
+    font-family: 'Nunito', sans-serif;
+    color: #3c4f77;
+}
+
+.btn-outline-primary {
+    color:#2F4164 !important; 
+    border-color: #2F4164 !important;
+    transition: 0.5s !important;
+    padding: 1.5vh !important;
+    padding-right: 1vw !important;
+    padding-left: 2vw !important;
+  }
+  
+.btn-outline-primary:hover {
+    color:white !important;
+    border-color: #2F4164 !important;
+    background-color: #2F4164 !important;
+}
