@@ -1,0 +1,21 @@
+.corpo {
+    margin-top: 9vh;
+    margin-bottom: 5vh;
+}
+
+h3{
+    margin-bottom: 5vh;
+    color: #2F4164;
+}
+
+.btn-cadastro{
+    background-color: #2F4164;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    border-style: none;
+    padding-inline: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 4vh;
+}
