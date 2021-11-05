@@ -58,7 +58,6 @@ export function Home () {
               <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Estoque</th>
                 <th scope="col">Preço</th>
                 <th scope="col">...</th>
               </tr>

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #3c4f77;
   }
 
@@ -30,7 +30,7 @@ Table{
 }
 
 th, td {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #3c4f77;
 }
 
@@ -41,6 +41,7 @@ th, td {
     padding: 1.5vh !important;
     padding-right: 1vw !important;
     padding-left: 2vw !important;
+    font-family: 'Poppins', sans-serif !important;
   }
   
 .btn-outline-primary:hover {
