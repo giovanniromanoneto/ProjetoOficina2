@@ -44,8 +44,8 @@ export function Inicio () {
     <Container className="container">
         <Row className="h-100">
         <Col md={5} className="colunaMensagem">
-          <h1 className="titulo">Gerenciador de Vendas</h1>
-          <h5 className="subtitulo">Não importa qual seu ramo de atuação, gerencie suas vendas com um sistema descomplicado e intuitivo.</h5>
+          <h1 data-testid="titulo" className="titulo">Gerenciador de Vendas</h1>
+          <h5 data-testid="subtitulo" className="subtitulo">Não importa qual seu ramo de atuação, gerencie suas vendas com um sistema descomplicado e intuitivo.</h5>
           <Image src={loja} fluid/>
           <p/>
         </Col>
@@ -57,6 +57,7 @@ export function Inicio () {
                             <Form.Group className="mb-3" controlId="email">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control
+                                data-testid="email"
                                 type="email"
                                 placeholder="Ex.: nome@email.com"
                                 value={ email }
@@ -67,6 +68,7 @@ export function Inicio () {
                             <Form.Group className="mb-3" controlId="senha">
                                 <Form.Label>Senha</Form.Label>
                                 <Form.Control
+                                data-testid="senha"
                                 type="password"
                                 placeholder="Senha"
                                 value={ senha }
@@ -78,7 +80,7 @@ export function Inicio () {
                             <Button className="padding-bottom-25px" variant='link' onClick={handleCadastro}>Clique aqui e se cadastre</Button><p/>
 
                             <div className="d-grid gap-2">
-                            <Button variant="primary" type="submit" size="md" onClick={handleLogin}>
+                            <Button data-testid="botao" variant="primary" type="submit" size="md" onClick={handleLogin}>
                                 Entrar
                             </Button>
                             </div>
