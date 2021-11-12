@@ -56,19 +56,19 @@ export function CadastroUser () {
         <Col className="formulario">
           <Card bg="light" style={{ width: '58rem' }} className="card">
             <Card.Body>
-            <Card.Title className="text-center">Cadastro de Usuário</Card.Title>
+            <Card.Title data-testid="titulo" className="text-center">Cadastro de Usuário</Card.Title>
             <Form>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Ex.: nome@email.com" onChange={(event) => setEmail(event.target.value)} value={email} />
+                    <Form.Control data-testid="email" type="email" placeholder="Ex.: nome@email.com" onChange={(event) => setEmail(event.target.value)} value={email} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="senha">
                     <Form.Label>Senha</Form.Label>
-                    <Form.Control type="password" placeholder="Senha" onChange={(event) => setSenha(event.target.value)} value={senha} />
+                    <Form.Control data-testid="senha" type="password" placeholder="Senha" onChange={(event) => setSenha(event.target.value)} value={senha} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" onClick={handleCadastro}>
+                <Button data-testid="botao" variant="primary" type="submit" onClick={handleCadastro}>
                     Cadastrar
                 </Button>
             </Form>
