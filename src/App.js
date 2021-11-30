@@ -15,6 +15,7 @@ function App () {
         <Route path="/cadastroUser" exact component={CadastroUser} />
         <Route path="/home" exact component={Home} />
         <Route path="/produto" exact component={Produto} />
+        <Route path='/produto/:idProduto' component={Produto}/>
       </AuthContextProvider>
     </BrowserRouter>
   )
