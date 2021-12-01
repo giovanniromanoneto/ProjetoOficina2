@@ -100,6 +100,30 @@ export function Home () {
     refSelectProduct.current.focus()
   }
 
+  // Add campos de venda e add carrinho dentro de venda
+  const cadastrarVenda = () => {
+    const novaVenda = {
+      data: new Date(),
+      itens: carrinho,
+      ...venda
+    }
+
+    setVenda(novaVenda)
+
+    return novaVenda
+  }
+
+  // Enviar a compra para o BD
+  const handleFinalizarCompra = () => {
+    const novaVenda = cadastrarVenda()
+
+    db.collection('vendas').add({ ...novaVenda })
+      .then(res => { console.log('venda adicionada') })
+      .catch(err => { console.log('erro > venda nao adicionada: ', err) })
+    setCarrinho([])
+  }
+
+  //  Deleta produto do Carrinho
   const handleDeleteProduto = id => {
     db.collection('produto').doc(id).delete()
       .then(() => {
@@ -252,6 +276,7 @@ export function Home () {
                 ? (
                   <div className="text-center mb-3">
                     <p>Valor total: {`R$ ${venda.total}`}</p>
+                    <button className="btn btn-primary w-100" onClick={handleFinalizarCompra}>Finalizar Compra</button>
                   </div>
                   )
                 : (null)
