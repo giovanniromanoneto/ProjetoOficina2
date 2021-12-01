@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartItems = ({ carrinho }) => {
+const CartItems = ({ carrinho, deleteItemCarrinho }) => {
   const listaCarrinho = carrinho.length
     ? (
         carrinho.map(item => {
@@ -13,6 +13,7 @@ const CartItems = ({ carrinho }) => {
               <div className="mb-2 text-muted">{item.descricao}</div>
               <div className="bottom d-flex justify-content-between">
                 <div>{`Quantidade: ${item.quantidade}`}</div>
+                <div className="text-danger" onClick={() => { deleteItemCarrinho(item.idItem) }}>Remover</div>
               </div>
             </div>
           )

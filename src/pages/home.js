@@ -67,6 +67,24 @@ export function Home () {
     setCarrinho(listaCarrinho)
   }
 
+  //  Deleta Item Carrinho
+  const deleteItemCarrinho = (id) => {
+    let valorItemRemovido = 0.00
+
+    const carrinhoAtualizado = carrinho.filter(item => {
+      // Atualiza o valor total apos remover
+      if (item.idItem === id) {
+        valorItemRemovido = item.preco * item.quantidade
+      }
+      return item.idItem !== id
+    })
+
+    // Atualizar o total da venda
+    const totalVendaNovo = venda.total - valorItemRemovido
+    setVenda({ total: totalVendaNovo })
+    setCarrinho(carrinhoAtualizado)
+  }
+
   // Adicionar item ao carrinho pelo form
   const handleSubmit = e => {
     e.preventDefault()
@@ -215,7 +233,7 @@ export function Home () {
             </section>
           </div>
 
-          {/* PANEL RIGHT, for the Shopping Cart */}
+          {/* Carrinho */}
           <div className="col-md-4">
             <section className="p-3 bg-light">
               <header className="mt-3 pb-4">
@@ -225,9 +243,9 @@ export function Home () {
                 </h2>
               </header>
 
-              {/* Shopping List of cards */}
+              {/* Lista de Compra no carrinho */}
               <div className="d-flex flex-column my-4">
-                <CartItems carrinho={carrinho}/>
+                <CartItems carrinho={carrinho} deleteItemCarrinho={deleteItemCarrinho} />
               </div>
 
               { carrinho.length
