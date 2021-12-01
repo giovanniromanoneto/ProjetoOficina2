@@ -49,3 +49,13 @@ th, td {
     border-color: #2F4164 !important;
     background-color: #2F4164 !important;
 }
+
+.btn-primary{
+    border-color: #2F4164 !important;
+    background-color: #2F4164 !important;
+}
+
+.btn-primary:hover {
+    border-color: #395080 !important;
+    background-color: #395080 !important;
+}
