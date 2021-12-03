@@ -27,7 +27,7 @@ export function Inicio () {
       .then(result => {
         if (result) {
           setSucesso(true)
-          history.push('/home')
+          setTimeout(toHome, 3000)
         }
       })
       .catch(err => {
@@ -38,6 +38,10 @@ export function Inicio () {
 
   function handleCadastro () {
     history.push('/cadastroUser')
+  }
+
+  function toHome () {
+    history.push('/home')
   }
 
   return (
