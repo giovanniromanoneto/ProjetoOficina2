@@ -91,5 +91,27 @@ class teste {
 
 		assertNotSame(primeiroProd, novoPrimeiroProd);
 	}
+
+	@Test
+	public void sucessoNoCadastroDeProduto() {
+		cd.get("http://localhost:3000");
+
+		// Pag. Login
+		cd.findElement(By.id("email")).sendKeys("teste@email.com");
+		cd.findElement(By.id("senha")).sendKeys("teste123");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div/form/div[3]/button")).click();
+
+		// Pag. Home
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[2]/header/a")).click();
+
+		// Pag. Cadastro Produto
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/input")).sendKeys("Produto 3");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/input")).sendKeys("3");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[3]/textarea")).sendKeys("Produto de Teste");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/button")).click();
+		var alert = cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[4]/div/p"));
+
+		assertEquals("☑ Operação realizada com sucesso!", alert.getText());
+	}
 	
 }
