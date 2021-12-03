@@ -70,5 +70,26 @@ class teste {
 
 		assertEquals("☑ Operação realizada com sucesso!", alert.getText());
 	}
+
+    @Test
+	public void exclusaoDeProduto() {
+		cd.get("http://localhost:3000");
+
+		// Pag. Login
+		cd.findElement(By.id("email")).sendKeys("teste@email.com");
+		cd.findElement(By.id("senha")).sendKeys("teste123");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div/form/div[3]/button")).click();
+
+		// Pag. Home
+		var primeiroProd = cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[2]/table/tbody/tr[1]/th"));
+
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[2]/table/tbody/tr[1]/td[3]/span")).click();
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[2]/table/tbody/tr[1]/td[3]/span")).click();
+
+		var novoPrimeiroProd = cd
+				.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[2]/table/tbody/tr[1]/th"));
+
+		assertNotSame(primeiroProd, novoPrimeiroProd);
+	}
 	
 }
