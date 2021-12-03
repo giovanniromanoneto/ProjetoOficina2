@@ -165,5 +165,29 @@ class teste {
 
 		assertEquals("Não há nada no carrinho.", carrinho.getText());
 	}
+
+	@Test
+	public void vendaBemSucedida() {
+		cd.get("http://localhost:3000");
+
+		// Pag. Login
+		cd.findElement(By.id("email")).sendKeys("teste@email.com");
+		cd.findElement(By.id("senha")).sendKeys("teste123");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div/form/div[3]/button")).click();
+
+		// Pag. Home
+
+		WebElement select = cd.findElement(By.xpath("//*[@id=\"selectProduct\"]"));
+		Select selectObject = new Select(select);
+		selectObject.selectByVisibleText("Produto 1");
+		cd.findElement(By.xpath("//*[@id=\"inputQuantity\"]")).sendKeys("2");
+
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[1]/form/div[4]/button")).click();
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/section/div[2]/button")).click();
+
+		var carrinho = cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/section/div/div"));
+
+		assertEquals("Não há nada no carrinho.", carrinho.getText());
+	}
 	
 }
