@@ -48,5 +48,27 @@ class teste {
 		assertEquals("Erro no login! Por favor verifique as informações.", erro.getText());
 	}
 
+    @Test
+	public void sucessoNaEdicaoDeProduto() {
+		cd.get("http://localhost:3000");
+
+		// Pag. Login
+		cd.findElement(By.id("email")).sendKeys("teste@email.com");
+		cd.findElement(By.id("senha")).sendKeys("teste123");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div/form/div[3]/button")).click();
+
+		// Pag. Home
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/section[2]/table/tbody/tr[1]/td[3]/a")).click();
+
+		// Pag. Edição Produto
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/input")).sendKeys(" Alterado");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/input")).clear();
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/input")).sendKeys("12");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[3]/textarea")).sendKeys(" Alterado");
+		cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/button")).click();
+		var alert = cd.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[4]/div/p"));
+
+		assertEquals("☑ Operação realizada com sucesso!", alert.getText());
+	}
 	
 }
